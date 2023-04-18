@@ -2,6 +2,28 @@
 <button (click)="checkPass(password)">Test</button> Event Binding
 <input type="text" value="{{a}}" [style.color]="color" /> Atrribute Binding -->
 
+<div class="header">
+  <ul>
+    <li>
+      <a routerLink="login">Login</a>
+    </li>
+    <li>
+      <a routerLink="signup">Sign Up</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer">
+  <p>I am footer</p>
+  <p>I am footer</p>
+  <p>I am footer</p>
+</div>
+
 <input type="text" [(ngModel)]="password" /> 
 <!-- ngModel acts as an event+attribute binder. Detects change and updates value of a -->
 
