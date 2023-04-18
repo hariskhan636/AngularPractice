@@ -1,0 +1,13 @@
+h1{
+    color: rebeccapurple;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px;
+}
+
+table th, table td{
+    padding: 5px 10px;
+    border: 1px solid;
+}

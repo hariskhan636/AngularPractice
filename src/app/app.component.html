@@ -1,0 +1,34 @@
+<!-- <h1>Hello {{password}}</h1> String Interpolation
+<button (click)="checkPass(password)">Test</button> Event Binding
+<input type="text" value="{{a}}" [style.color]="color" /> Atrribute Binding -->
+
+<input type="text" [(ngModel)]="password" /> 
+<!-- ngModel acts as an event+attribute binder. Detects change and updates value of a -->
+
+<h1>You entered {{password}}</h1>
+
+<h1 *ngIf="checkPass()">Welcome, Password is correct</h1> <!--If condition-->
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temp of products; let i = index">
+      <td>{{temp.sku}}</td>
+      <td>{{temp.name}}</td>
+      <td>{{temp.price}}</td>
+      <td>
+        <button (click)="deleteProduct(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="addProduct()">Add Product</button>
+
