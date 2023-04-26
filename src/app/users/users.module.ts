@@ -4,6 +4,9 @@ import { UsersComponent } from './users/users.component';
 import { RouterModule } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DataService } from 'src/libs/data.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +14,7 @@ import { DataService } from 'src/libs/data.service';
     AddUserComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule,HttpClientModule,ReactiveFormsModule,
     RouterModule.forChild([
       {
         path:'',

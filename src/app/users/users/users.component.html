@@ -6,5 +6,41 @@
 
 <hr>
 
-<h1>Add User Component</h1>
-<app-add-user></app-add-user>
+<!-- <h1>Add User Component</h1>
+<app-add-user></app-add-user> -->
+
+<hr>
+
+<button class="button" (click)="getUsersFromServer()">Get Users from server</button>
+
+<h1>{{usersList.length}}</h1>
+<table>
+    <thead>
+        <th>Image</th>
+        <th>Email</th>
+        <th>Name</th>
+    </thead>
+    <tbody *ngIf="loadingStatus=='done'">
+        <tr *ngFor="let user of usersList">
+            <td>
+                <img [src]="user.avatar">
+            </td>
+            <td>{{user.email}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="loadingStatus=='loading'">
+        <tr>
+            <td colspan="3">
+                <h1>Please wait, loading data...</h1>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="loadingStatus=='error'">
+        <tr>
+            <td colspan="3">
+                <h1>Unable to load data</h1>
+            </td>
+        </tr>
+    </tbody>
+</table>

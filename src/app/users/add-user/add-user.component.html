@@ -1,5 +1,14 @@
-<h1>{{getName(0)}}</h1>
-
-<button (click)="updateUser(0)">
-Update User
-</button>
+<div class="container">
+    <h1>Add User</h1>
+    <form (ngSubmit)="saveUser()" [formGroup]="userform">
+        <input placeholder="First Name" formControlName="first_name">
+        <div class="errors" *ngIf="this.userform.controls['first_name'].invalid">
+            <p *ngIf="this.userform.controls['first_name'].errors?.['maxlength']">
+                You entered {{this.userform.controls['first_name'].errors?.['maxlength'].actualLength}} characters but max allowed are 
+                {{this.userform.controls['first_name'].errors?.['maxlength'].requiredLength}}
+            </p>
+        </div>
+        <input placeholder="Last Name" formControlName="last_name">
+        <button type="submit">Save</button>
+    </form>
+</div>
